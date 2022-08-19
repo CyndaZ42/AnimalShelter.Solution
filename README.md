@@ -52,8 +52,16 @@ _This is a detailed description of your application. Give as much detail as need
 2. Insert the following code [^1]  
     ```json
     {
+      "Logging": {
+        "LogLevel": {
+          "Default": "Warning",
+          "System": "Information",
+          "Microsoft": "Information"
+        }
+      },
+      "AllowedHosts": "*",
       "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=project_name;uid=root;pwd=[YOUR-PASSWORD-HERE];"
+        "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter;uid=root;pwd=[YOUR-PASSWORD-HERE];"
       }
     }
     ```

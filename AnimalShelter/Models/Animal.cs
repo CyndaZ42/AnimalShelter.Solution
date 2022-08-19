@@ -1,3 +1,6 @@
+using System;
+using System.Globalization;
+using System.ComponentModel.DataAnnotations;
 
 namespace AnimalShelter.Models
 {
@@ -6,6 +9,7 @@ namespace AnimalShelter.Models
     public int AnimalId { get; set; }
     public string Species { get; set; }
     public string Name { get; set; }
+    public DateTime Birthday { get; set; }
     public int Age { get; set; }
     public string Gender { get; set; }
   }

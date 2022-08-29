@@ -91,6 +91,27 @@ namespace AnimalShelter.Controllers
       return CreatedAtAction(nameof(GetAnimal), new { id = animal.AnimalId }, animal);
     }
 
+    [HttpGet("random")]
+    public async Task<ActionResult<Animal>> GetRandom()
+    {
+      Random rnd = new Random();
+      int count = 1;
+
+      foreach (Animal aaa in _db.Animals)
+      {
+        count += 1;
+      }
+      int id = rnd.Next(1, count);
+      var animal = await _db.Animals.FindAsync(id);
+
+      if (animal == null)
+      {
+        return NotFound();
+      }
+
+      return animal;
+    }
+
     private bool AnimalExists(int id)
     {
       return _db.Animals.Any(e => e.AnimalId == id);
